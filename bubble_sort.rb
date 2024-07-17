@@ -20,17 +20,14 @@
 
 def bubble_sort(array)
   counter = 1
-
   while counter > 0 do
     counter = 0
     array.each_with_index do |value, index|
       next_value = array[index+1]
-      if next_value
-        if value > next_value
-          counter += 1
-          array[index+1] = value
-          array[index] = next_value
-        end
+      if next_value && value > next_value
+        counter += 1
+        array[index+1] = value
+        array[index] = next_value
       end
     end
   end 
